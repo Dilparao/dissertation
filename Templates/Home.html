@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="white">Heart Disease Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+
+
+    <label for="cholesterol"></label>
+    <input type="number" id="cholesterol" name="cholesterol" placeholder="Cholesterol levels (between 1 and 3)" min="1" max="3" step="0.1" required size="35">
+
+
+    <label for="gluc"></label>
+    <input type="number" id="gluc" name="gluc" placeholder="Blood Sugar levels (between 1 and 3)" min="1" max="3" step="0.1" required size="35">
+
+    <label for="final_age"></label>
+    <input type="number" id="final_age" name="final_age" placeholder="Patient's Age (between 18-37:1,38-45:2,46-53:3, 54-61:4,62-69:5 70-80:6)" min="1" max="6" required>   
+    
+    <label for="final_ap_hi"></label>
+    <input type="number" id="final_ap_hi" name="final_ap_hi" placeholder="High blood pressure (between 1 and 6)" min="1" max="6" step="0.1" required size="35">
+
+    <label for="final_ap_lo"></label>
+    <input type="number" id="final_ap_lo" name="final_ap_lo" placeholder="Low blood pressure (between 1 and 6)" min="1" max="6" step="0.1" required size="35">
+
+
+    <label for="final_bmi"></label>
+    <input type="number" id="final_bmi" name="final_bmi" placeholder="Body Mass Index (between 18:1,19-24:2,25:29:3,30-100:4)" min="1" max="4" step="0.1" required size="35">
+
+
+
+    <select name="req_model">
+    <option value="Logistic">Logistic Regression</option>
+    <option value="SvmRbf">SVM Radial Basis Function</option>
+    <option value="SvmLinear">SVM Linear</option>
+    <option value="SvmPoly">SVM Polynomial</option>
+    <option value="DecisionTree">Decision Tree</option>
+    <option value="RandomForest">Random Forest</option>
+
+
+  </select>
+
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Heart Disease Category is {{ target}}</h2></center>
+    <center><h2><font color="Black"> {{ disease_present}}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
+
